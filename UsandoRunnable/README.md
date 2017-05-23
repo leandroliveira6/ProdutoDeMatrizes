@@ -1,3 +1,3 @@
-# Executors
+# Implementação Alternativa
 
-> java ProdutoDeMatrizes.Main ProdutoDeMatrizes.Matrizes.txt 3 9 5
+Usando CountDownLatch e implementando Runnable
