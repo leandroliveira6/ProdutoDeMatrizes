@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ProdutoDeMatrizes;
+package AlternativoProdutoDeMatrizes;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -25,15 +25,16 @@ public class Main {
 
     /**
      * @param args the command line arguments
-     * @throws java.lang.InterruptedException
      * @throws java.io.FileNotFoundException
+     * @throws java.io.IOException
+     * @throws java.lang.InterruptedException
      */
     public static void main(String[] args) throws InterruptedException, FileNotFoundException, IOException {
         ArrayList<double[][]> matrizes = new ArrayList<>();
-        double resultado[][];
         Scanner arquivoLeitura;
         FileWriter arquivoEscrita;
         ExecutorService es;
+        double resultado[][];
         int n, m, q;
         long tempo;
 
@@ -43,7 +44,6 @@ public class Main {
         m = Integer.parseInt(args[2]); //numero máximo de threads
         q = Integer.parseInt(args[3]); //numero de matrizes
         arquivoLeitura = new Scanner(new FileReader(new File(args[0])));
-        //while (arquivoLeitura.hasNext()) {
         for (int k = 0; k < q; k++) {
             double matriz[][] = new double[n][n];
             for (int i = 0; i < n; i++) {

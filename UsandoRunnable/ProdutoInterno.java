@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ProdutoDeMatrizes;
+package AlternativoProdutoDeMatrizes;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -18,14 +18,14 @@ public class ProdutoInterno implements Runnable {
     private final CountDownLatch trava;
 
     public ProdutoInterno(CountDownLatch trava, double v1[], double v2[]) {
-        this.v1 = v1;
-        this.v2 = v2;
+        this.v1 = v1.clone();
+        this.v2 = v2.clone();
         this.trava = trava;
     }
 
     @Override
     public void run() {
-        System.out.println("Inicio da thread " + Thread.currentThread().getName());
+        //System.out.println("Inicio da thread " + Thread.currentThread().getName());
         calcular();
         trava.countDown();
     }
